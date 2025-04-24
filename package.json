@@ -1,0 +1,36 @@
+{
+  "name": "doc-extraction",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^4.0.2",
+    "@sap-cloud-sdk/http-client": "^4.0.2",
+    "@sap-cloud-sdk/resilience": "^4.0.2",
+    "@sap-cloud-sdk/util": "^4.0.2",
+    "@sap/cds": "^8",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.9.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "Document.Information.Extraction": {
+        "kind": "rest",
+        "model": "srv/external/document_information_extraction_api",
+        "impl": "srv/external/document_information_extraction_api.js",
+        "credentials": {
+          "destination": "DOC_EXTRACTION"
+        }
+      }
+    }
+  }
+}

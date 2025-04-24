@@ -1,0 +1,15 @@
+{
+    "import": {
+        "as": "cds",
+        "force": true
+    },
+    "cdsc": {
+        "odataNoCreator": true
+    },
+    "requires": {
+        "Document.Information.Extraction": {
+            "kind": "rest",
+            "model": "srv/external/document_information_extraction_api"
+        }
+    }
+}
