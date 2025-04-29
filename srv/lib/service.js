@@ -14,7 +14,7 @@ class RestRemoteService extends cds.RemoteService {
       const definition = this.model.definitions[fullyQualifiedName];
 
       req.method = getMethod(definition);
-      req.path =  "/"+getPath(definition, req.data, this.customizeQueryParams);
+      req.path =  getPath(definition, req.data, this.customizeQueryParams);
       // Object.assign(
       //   req.headers,
       //   getHeaders(definition, req.data, this.customizeHeaders)
@@ -25,8 +25,12 @@ class RestRemoteService extends cds.RemoteService {
       );
       //req.data = getBody(definition, req.data);
       const formdata = new FormData();
+      // for (const [key, value] of Object.entries(req.data)) {
+      //   formdata.append(key, value);
+      // }
+
       for (const [key, value] of Object.entries(req.data)) {
-        formdata.append(key, value);
+        formdata.append(key,new File([value], 'bhargav.pdf', { type: 'application/pdf' }));
       }
       
      //       "options": { "schemaId": "09e6c9e4-d7b0-414f-bd85-cfee6fbb2add", "schemaVersion": "1", "clientId": "default", "documentType": "custom", "enrichment": {} }

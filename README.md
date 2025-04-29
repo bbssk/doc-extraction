@@ -23,3 +23,8 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+
+DEBUG=all cds watch --with-mocks --in-memory --profile hybrid 
+
+use above to run 

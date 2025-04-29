@@ -15,9 +15,14 @@ module.exports = cds.service.impl(async function () {
         // const binaryString = Array.from(new Uint8Array(binaryData))
         //     .map(byte => String.fromCharCode(byte))
         //     .join('');
-        var file = {
-            "file": Buffer.from(binaryData)
-        };
+        //const buffer = Buffer.from(request.data.FileClient, 'base64');
+        //const file = new Blob([buffer], { type: request.data.MimeType })
+        // var file = {
+        //     "file": Buffer.from(binaryData)
+        // };
+        var file ={
+            "file":new Blob([fileBuffer], { type: "application/pdf" })
+        }
 
         //var result = await extservice.send("document_jobs_post", file);
 
