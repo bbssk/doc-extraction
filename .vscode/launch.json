@@ -15,6 +15,24 @@
       "skipFiles": [
         "<node_internals>/**"
       ]
+    },
+    {
+      "name": "cds w (hybrid profile)",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "cds",
+      "args": [
+        "w",
+        "--with-mocks",
+        "--in-memory"
+      ],
+      "env": {
+        "CDS_ENV": "hybrid"
+      },
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }
