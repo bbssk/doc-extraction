@@ -30,11 +30,12 @@ class RestRemoteService extends cds.RemoteService {
       // }
 
       for (const [key, value] of Object.entries(req.data)) {
-        formdata.append(key,new File([value], 'bhargav.pdf', { type: 'application/pdf' }));
+        formdata.append(key,new File([value], 'abcd.pdf', { type: 'application/pdf' }));
       }
       
      //       "options": { "schemaId": "09e6c9e4-d7b0-414f-bd85-cfee6fbb2add", "schemaVersion": "1", "clientId": "default", "documentType": "custom", "enrichment": {} }
-      formdata.append("options",JSON.stringify({ "schemaId": "09e6c9e4-d7b0-414f-bd85-cfee6fbb2add", "schemaVersion": "1", "clientId": "default", "documentType": "custom", "enrichment": {} }));
+      //formdata.append("options",JSON.stringify({ "schemaId": "09e6c9e4-d7b0-414f-bd85-cfee6fbb2add", "schemaVersion": "1", "clientId": "default", "documentType": "custom", "enrichment": {} }));
+      formdata.append("options", JSON.stringify({"schemaId":"cf8cc8a9-1eee-42d9-9a3e-507a61baac23","schemaVersion":"1","clientId":"default","documentType":"invoice","enrichment":{}}))
       req.data =formdata;
       req.event = "";
     });
