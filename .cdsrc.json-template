@@ -1,0 +1,21 @@
+{
+    "import": {
+        "as": "cds",
+        "force": true
+    },
+    "cdsc": {
+        "odataNoCreator": true
+    },
+    "requires": {
+        "Document.Information.Extraction": {
+            "kind": "rest",
+            "model": "srv/external/document_information_extraction_api",
+            "impl": "srv/external/document_information_extraction_api.js",
+            "credentials": {
+              "destination": "DOC_EXTRACTION",
+              "requestTimeout": 30000,
+              "path": "/document-information-extraction/v1"
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "custom-service:doc-info-extraction-inst": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "4e80cd6dtrial",
+          "space": "dev",
+          "instance": "doc-info-extraction-inst",
+          "key": "doc-info-extraction-inst-key"
+        },
+        "vcap": {
+          "name": "custom-service:doc-info-extraction-inst"
+        }
+      },
+      "connectivity": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "4e80cd6dtrial",
+          "space": "dev",
+          "instance": "doc-extraction-connectivity",
+          "key": "doc-extraction-connectivity-key"
+        },
+        "kind": "connectivity",
+        "vcap": {
+          "name": "connectivity"
+        }
+      },
+      "destinations": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "4e80cd6dtrial",
+          "space": "dev",
+          "instance": "doc-extraction-destination",
+          "key": "doc-extraction-destination-key"
+        },
+        "kind": "destinations",
+        "vcap": {
+          "name": "destinations"
+        }
+      }
+    }
+  }
+}
